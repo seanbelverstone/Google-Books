@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import MainNav from "./components/Navbar";
 import { BrowserRouter as Router, Route} from "react-router-dom";
+import MainNav from "./components/Navbar";
+import MainJumbotron from "./components/MainJumbotron";
 import "./App.css";
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
             <Route exact path="/" />
             {/* <Route path="/saved" component={SavedBooks} /> */}
           </MainNav>
+          <MainJumbotron />
         </div>
       </Router>
     );
