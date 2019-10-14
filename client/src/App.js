@@ -22,8 +22,7 @@ class App extends Component {
   getSearch = (event) => {
     event.preventDefault();
     console.log("clicked");
-    API.getSearch(this.state.search)
-    .then(res => res.json());
+    API.getSearch(this.state.search);
   }
 
   render() {
@@ -38,7 +37,7 @@ class App extends Component {
           <SearchBar 
           search={this.state.search}
           onChange={this.handleChange}
-          onClick={() => this.getSearch}/>
+          onClick={this.getSearch}/>
         </div>
       </Router>
     );
