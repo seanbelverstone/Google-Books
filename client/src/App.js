@@ -22,7 +22,8 @@ class App extends Component {
   getSearch = (event) => {
     event.preventDefault();
     console.log("clicked");
-    API.getSearch(this.state.search);
+    API.getSearch(this.state.search)
+    this.setState({search: ""});
   }
 
   render() {
