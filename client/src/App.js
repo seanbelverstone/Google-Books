@@ -22,8 +22,9 @@ class App extends Component {
   getSearch = (event) => {
     event.preventDefault();
     console.log("clicked");
-    API.getSearch(this.state.search);
-    }
+    API.getSearch(this.state.search)
+    .then(res => res.json());
+  }
 
   render() {
     return (
@@ -35,7 +36,7 @@ class App extends Component {
           </MainNav>
           <MainJumbotron />
           <SearchBar 
-          value={this.state.search}
+          search={this.state.search}
           onChange={this.handleChange}
           onClick={() => this.getSearch}/>
         </div>

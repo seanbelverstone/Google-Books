@@ -5,9 +5,9 @@ const SearchBar = (props) => {
     return (
         <Form>
             <FormGroup>
-                <Label for="searchBar">Enter your search here</Label>
-                <Input type="text" name="searchBar" id="searchBar" placeholder="War of the Worlds"/>
-                <Button color="success" type="submit" onClick={() => props.getSearch}>Search</Button>
+                <Label for="search">Enter your search here</Label>
+                <Input type="text" name="search" id="search" placeholder="War of the Worlds" onChange={props.onChange} value={props.search}/>
+                <Button color="success" onClick={props.onClick}>Search</Button>
             </FormGroup>
         </Form>
     )
