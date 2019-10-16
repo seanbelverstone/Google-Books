@@ -5,7 +5,10 @@ const List = () => {
     return(
         <div>
             <ul>
-                <Book></Book>
+                <Book 
+                /* Write in the map for the books here, within the Book component. Like, <Book {code} /> */>
+                    <p>Books go here mate</p>
+                </Book>
             </ul>
         </div>
     )

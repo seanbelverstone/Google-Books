@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import MainNav from "./components/Navbar";
 import MainJumbotron from "./components/MainJumbotron";
 import SearchBar from "./components/SearchBar";
+import List from "./components/List";
 import API from "./utils/API";
 import "./App.css";
 
@@ -40,6 +41,7 @@ class App extends Component {
           onChange={this.handleChange}
           onClick={this.getSearch}/>
         </div>
+        <List />
       </Router>
     );
   }
