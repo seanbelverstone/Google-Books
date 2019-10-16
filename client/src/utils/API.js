@@ -1,10 +1,14 @@
 import axios from "axios";
 
-export default {
-    getSearch: function(query) {
+    let results = [];
+
+    function getSearch(query) {
         return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + query)
         .then(res => {
-            console.log(res.data);
+            results = res.data.items;
+            console.log(results);
         });
     }
-}
+
+
+export default { getSearch, results };

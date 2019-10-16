@@ -6,7 +6,7 @@ const Book = (props) => {
             {/* Title */}
             <li>{props.title}</li>
             {/* Thumbnail image */}
-            <li><img src={props.img} /></li>
+            <li><img src={props.img} alt={props.alt} /></li>
             {/* Author */}
             <li>{props.author}</li>
             {/* Synopsis */}
