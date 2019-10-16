@@ -26,13 +26,16 @@ class App extends Component {
     event.preventDefault();
 
     // Using utils, makes the axios call
-    API.getSearch(this.state.search).then(() => {
+    API.getSearch(this.state.search).then(results => {
 
       // Sets the state of bookResults to the API results
-      this.setState({bookResults: API.results});
+      this.setState(
+        {bookResults: results.data.items});
+        console.log(this.state.bookResults);
 
     });
-    this.setState({search: ""});
+    this.setState(
+      {search: ""});
   }
 
   render() {
@@ -51,7 +54,10 @@ class App extends Component {
         </div>
         <List>
           <Book 
-          title={this.state.bookResults}/>
+          // map here
+          title={this.state.bookResults}
+          img={this.state.bookResults}/>
+          
 
           
         </List>

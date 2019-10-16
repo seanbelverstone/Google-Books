@@ -3,6 +3,7 @@ import React from "react";
 const Book = (props) => {
     return(
         <div>
+            <i className="material-icons">favorite</i>
             {/* Title */}
             <li>{props.title}</li>
             {/* Thumbnail image */}
