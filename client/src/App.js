@@ -38,6 +38,10 @@ class App extends Component {
 
   saveBook = (key) => {
     console.log(key)
+    API.saveBook(key)
+    .then(results => {
+      console.log(results);
+    });
   }
 
   render() {

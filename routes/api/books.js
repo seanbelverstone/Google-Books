@@ -8,8 +8,7 @@ router.route("/")
   .post(booksController.create);
 
 // Matches with "/api/books/:id"
-router
-  .route("/:id")
+router.route("/:id")
 //Remove a book from saved
   .delete(booksController.remove);
 
