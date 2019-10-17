@@ -5,6 +5,7 @@ import MainJumbotron from "./components/MainJumbotron";
 import SearchBar from "./components/SearchBar";
 import List from "./components/List";
 import Book from "./components/Book";
+import SavedBooks from "./components/SavedBooks";
 import API from "./utils/API";
 import "./App.css";
 
@@ -58,7 +59,7 @@ class App extends Component {
       <Router>
         <div>
           <MainNav>
-            <Route exact path="/" />
+            <Route exact path="/"/>
             <Route path="/saved" component={SavedBooks} />
           </MainNav>
           <MainJumbotron />
@@ -81,7 +82,7 @@ class App extends Component {
             )
           })}
         </List>
-          
+        
 
       </Router>
     );
