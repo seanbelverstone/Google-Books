@@ -36,6 +36,10 @@ class App extends Component {
       {search: ""});
   }
 
+  saveBook = (key) => {
+    console.log(key)
+  }
+
   render() {
     return (
       <Router>
@@ -59,7 +63,8 @@ class App extends Component {
                 image={book.volumeInfo.imageLinks.thumbnail}
                 author={book.volumeInfo.authors}
                 synopsis={book.volumeInfo.description}
-                purchaseLink={book.volumeInfo.canonicalVolumeLink}/>
+                purchaseLink={book.volumeInfo.canonicalVolumeLink}
+                onClick={() => this.saveBook(book.id)}/>
             )
           })}
         </List>
