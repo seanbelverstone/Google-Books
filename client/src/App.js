@@ -59,7 +59,7 @@ class App extends Component {
         <div>
           <MainNav>
             <Route exact path="/" />
-            {/* <Route path="/saved" component={SavedBooks} /> */}
+            <Route path="/saved" component={SavedBooks} />
           </MainNav>
           <MainJumbotron />
           <SearchBar 
