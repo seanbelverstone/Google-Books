@@ -31,8 +31,6 @@ class App extends Component {
       // Sets the state of bookResults to the API results
       this.setState(
         {bookResults: results.data.items});
-        console.log(this.state.bookResults);
-
     });
     this.setState(
       {search: ""});
@@ -53,14 +51,19 @@ class App extends Component {
           onClick={this.getSearch}/>
         </div>
         <List>
-          <Book 
-          // map here
-          title={this.state.bookResults}
-          img={this.state.bookResults}/>
+          {this.state.bookResults.map(book => {
+            return(
+              <Book 
+                key={book.id}
+                title={book.volumeInfo.title}
+                author={book.volumeInfo.authors}
+                synposis={book.volumeInfo.description}
+                purchaseLink={book.volumeInfo.canonicalVolumeLink}/>
+            )
+          })}
+        </List>
           
 
-          
-        </List>
       </Router>
     );
   }

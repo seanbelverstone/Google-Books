@@ -1,17 +1,28 @@
 import React from "react";
+import { Media } from "reactstrap";
 
-const Book = (props) => {
+export function Book ({
+    title,
+    image,
+    author,
+    synopsis,
+    purchaseLink
+  }) {
     return(
         <div>
             <i className="material-icons">favorite</i>
             {/* Title */}
-            <li>{props.title}</li>
+            <li>{title}</li>
             {/* Thumbnail image */}
-            <li><img src={props.img} alt={props.alt} /></li>
+            <Media>
+                <Media object data-href={image} alt={title} />
+            </Media>
             {/* Author */}
-            <li>{props.author}</li>
+            <li>{author}</li>
             {/* Synopsis */}
-            <li>{props.synopsis}</li>
+            <li>{synopsis}</li>
+            {/* Purchase Link */}
+            <a href={purchaseLink}>Purchase the book here</a>
         </div>
 
     )
