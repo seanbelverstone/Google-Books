@@ -56,8 +56,9 @@ class App extends Component {
               <Book 
                 key={book.id}
                 title={book.volumeInfo.title}
+                image={book.volumeInfo.imageLinks.thumbnail}
                 author={book.volumeInfo.authors}
-                synposis={book.volumeInfo.description}
+                synopsis={book.volumeInfo.description}
                 purchaseLink={book.volumeInfo.canonicalVolumeLink}/>
             )
           })}

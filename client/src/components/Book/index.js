@@ -1,5 +1,4 @@
 import React from "react";
-import { Media } from "reactstrap";
 
 export function Book ({
     title,
@@ -14,9 +13,7 @@ export function Book ({
             {/* Title */}
             <li>{title}</li>
             {/* Thumbnail image */}
-            <Media>
-                <Media object data-href={image} alt={title} />
-            </Media>
+            <img src={image} alt={title + " image"}/>
             {/* Author */}
             <li>{author}</li>
             {/* Synopsis */}
