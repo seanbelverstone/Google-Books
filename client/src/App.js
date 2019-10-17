@@ -3,13 +3,16 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import MainNav from "./components/Navbar";
 import MainJumbotron from "./components/MainJumbotron";
 import SearchBar from "./components/SearchBar";
+import List from "./components/List";
+import Book from "./components/Book";
 import API from "./utils/API";
 import "./App.css";
 
 class App extends Component {
 
   state = {
-    search: ""
+    search: "",
+    bookResults: []
   };
 
   handleChange = (event) => {
@@ -21,9 +24,16 @@ class App extends Component {
 
   getSearch = (event) => {
     event.preventDefault();
-    console.log("clicked");
-    API.getSearch(this.state.search)
-    this.setState({search: ""});
+
+    // Using utils, makes the axios call
+    API.getSearch(this.state.search).then(results => {
+
+      // Sets the state of bookResults to the API results
+      this.setState(
+        {bookResults: results.data.items});
+    });
+    this.setState(
+      {search: ""});
   }
 
   render() {
@@ -40,6 +50,21 @@ class App extends Component {
           onChange={this.handleChange}
           onClick={this.getSearch}/>
         </div>
+        <List>
+          {this.state.bookResults.map(book => {
+            return(
+              <Book 
+                key={book.id}
+                title={book.volumeInfo.title}
+                image={book.volumeInfo.imageLinks.thumbnail}
+                author={book.volumeInfo.authors}
+                synopsis={book.volumeInfo.description}
+                purchaseLink={book.volumeInfo.canonicalVolumeLink}/>
+            )
+          })}
+        </List>
+          
+
       </Router>
     );
   }
