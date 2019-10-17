@@ -5,13 +5,14 @@ export function Book ({
     image,
     author,
     synopsis,
-    purchaseLink
+    purchaseLink,
+    onClick
   }) {
     return(
         <div>
-            <i className="material-icons">favorite</i>
             {/* Title */}
-            <li>{title}</li>
+            <li>{title}</li>        
+            <i className="material-icons" onClick={onClick}>favorite</i>
             {/* Thumbnail image */}
             <img src={image} alt={title + " image"}/>
             {/* Author */}
