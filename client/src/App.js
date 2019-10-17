@@ -36,11 +36,20 @@ class App extends Component {
       {search: ""});
   }
 
-  saveBook = (key) => {
-    console.log(key)
-    API.saveBook(key)
-    .then(results => {
-      console.log(results);
+  saveBook = (book) => {
+    let requestBody = {
+      "bookId": book.id, 
+      "title": book.volumeInfo.title, 
+      "authors": book.volumeInfo.authors,
+      "description": book.volumeInfo.description,
+      "image": book.volumeInfo.imageLinks.thumbnail,
+      "link": book.volumeInfo.canonicalVolumeLink
+    }
+    console.log(requestBody);
+
+    API.saveBook(requestBody)
+    .then(() => {
+      console.log("Done")
     });
   }
 
@@ -68,7 +77,7 @@ class App extends Component {
                 author={book.volumeInfo.authors}
                 synopsis={book.volumeInfo.description}
                 purchaseLink={book.volumeInfo.canonicalVolumeLink}
-                onClick={() => this.saveBook(book.id)}/>
+                onClick={() => this.saveBook(book)}/>
             )
           })}
         </List>
