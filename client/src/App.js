@@ -57,7 +57,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="container">
           <MainNav>
             <Route exact path="/" />
             <Route path="/saved" component={SavedBooks} />
@@ -67,7 +67,6 @@ class App extends Component {
           search={this.state.search}
           onChange={this.handleChange}
           onClick={this.getSearch}/>
-        </div>
         <List>
           {this.state.bookResults.map(book => {
             return(
@@ -83,7 +82,7 @@ class App extends Component {
           })}
         </List>
         <SavedBooks />
-
+        </div>
       </Router>
     );
   }
