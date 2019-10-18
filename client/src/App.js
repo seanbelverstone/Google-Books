@@ -59,7 +59,7 @@ class App extends Component {
       <Router>
         <div>
           <MainNav>
-            <Route exact path="/"/>
+            <Route exact path="/" />
             <Route path="/saved" component={SavedBooks} />
           </MainNav>
           <MainJumbotron />
@@ -82,7 +82,7 @@ class App extends Component {
             )
           })}
         </List>
-        
+        <SavedBooks />
 
       </Router>
     );
