@@ -1,5 +1,6 @@
 import React from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import "./style.css";
 
 const SearchBar = (props) => {
     return (

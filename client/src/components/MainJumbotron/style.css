@@ -1,0 +1,25 @@
+.jumbotron {
+    background-image: url("https://blog.hubspot.com/hubfs/image8-2.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: right;
+    background-color: whitesmoke !important;
+    border-radius: 100px 100px !important;
+    margin-top: 30px;
+}
+
+.display-3 {
+    color: rgb(228,62,43);
+    font-weight: bold !important;
+
+}
+
+.lead {
+    color: rgb(240,181,1);
+    font-weight: bold !important;
+}
+
+.intro {
+    color: rgb(43,162,76);
+    font-weight: bold !important;
+}

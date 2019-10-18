@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 export function Book ({
     title,
@@ -9,18 +10,18 @@ export function Book ({
     onClick
   }) {
     return(
-        <div>
+        <div className="book">
             {/* Title */}
-            <li>{title}</li>        
+            <div className="title">{title}</div>        
             <i className="material-icons" onClick={onClick}>favorite</i>
             {/* Thumbnail image */}
-            <img src={image} alt={title + " image"}/>
+            <img className="image" src={image} alt={title + " image"}/>
             {/* Author */}
-            <li>{author}</li>
+            <div className="author">{author}</div>
             {/* Synopsis */}
-            <li>{synopsis}</li>
+            <div className="synopsis">{synopsis}</div>
             {/* Purchase Link */}
-            <a href={purchaseLink}>Purchase the book here</a>
+            <a className="link" href={purchaseLink}>Purchase the book here</a>
         </div>
 
     )

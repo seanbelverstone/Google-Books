@@ -1,0 +1,17 @@
+.navbar {
+    background-color: whitesmoke;
+    border-radius: 30px 30px;
+    padding: 20px !important;
+}
+
+a {
+    color: black !important;
+}
+
+a:hover {
+    color: darkgray !important;
+}
+
+a:active {
+    color: gray !important;
+}

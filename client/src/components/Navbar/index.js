@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
 import { Link } from "react-router-dom";
+import "./style.css";
 
 const MainNav = (props) => {
   const [collapsed, setCollapsed] = useState(true);
