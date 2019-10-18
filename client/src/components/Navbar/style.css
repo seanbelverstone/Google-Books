@@ -1,0 +1,11 @@
+a {
+    color: black !important;
+}
+
+a:hover {
+    color: darkgray !important;
+}
+
+a:active {
+    color: gray !important;
+}
