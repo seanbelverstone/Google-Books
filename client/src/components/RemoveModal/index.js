@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import API from "../../utils/API";
+import "./style.css";
 
 const RemoveModal = (props) => {
   const {
@@ -31,7 +32,7 @@ const RemoveModal = (props) => {
 
   return (
     <div>
-      <Button color="secondary" onClick={toggle}>X</Button>
+      <Button color="secondary" id="modalClose" onClick={toggle}>X</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}></ModalHeader>
         <ModalBody>
