@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3001;
 
 const mongoUser = process.env.MONGO_USER;
 const mongoPassword = process.env.MONGO_PASSWORD
+const mongoDB = process.env.MONGO_DATABASE_NAME
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -17,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect(`mongodb://${mongoUser}:${mongoPassword}@ds235658.mlab.com:35658/heroku_dprdz1ff`, { useNewUrlParser: true });
+mongoose.connect(`mongodb://${mongoUser}:${mongoPassword}@ds235658.mlab.com:35658/${mongoDB}, { useNewUrlParser: true });
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
