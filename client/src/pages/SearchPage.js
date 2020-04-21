@@ -23,7 +23,7 @@ class SearchPage extends Component {
 
     // Using utils, makes the axios call
     API.getSearch(this.state.search).then(results => {
-
+      console.log(results.data.items[0].volumeInfo.imageLinks)
       // Sets the state of bookResults to the API results
       this.setState(
         {bookResults: results.data.items});
@@ -64,7 +64,7 @@ class SearchPage extends Component {
                         key={book.id}
                         title={book.volumeInfo.title}
                         icon="favorite"
-                        image={book.volumeInfo.imageLinks.thumbnail}
+                        image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://cns.utexas.edu/components/com_easyblog/themes/wireframe/images/placeholder-image.png"}
                         author={book.volumeInfo.authors}
                         synopsis={book.volumeInfo.description}
                         purchaseLink={book.volumeInfo.canonicalVolumeLink}
