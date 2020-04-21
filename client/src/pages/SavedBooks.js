@@ -25,14 +25,14 @@ class SavedBooks extends Component {
         return(
             <div className="bookDisplay">
                 <List>
-                    {this.state.savedBooks.map(savedBooks => (
+                    {this.state.savedBooks.map(book => (
                         <Book
-                            key={savedBooks.id}
-                            title={savedBooks.volumeInfo.title}
-                            image={savedBooks.volumeInfo.imageLinks.thumbnail}
-                            author={savedBooks.volumeInfo.authors}
-                            synopsis={savedBooks.volumeInfo.description}
-                            purchaseLink={savedBooks.volumeInfo.canonicalVolumeLink} />
+                            key={book._id}
+                            title={book.title}
+                            image={book.image}
+                            author={book.authors}
+                            synopsis={book.description}
+                            purchaseLink={book.link} />
                     ))}
                 </List>
             </div>
