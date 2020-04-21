@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import SearchBar from "../SearchBar";
-import List from "../List";
-import Book from "../Book";
+import SearchBar from "../components/SearchBar";
+import List from "../components/List";
+import Book from "../components/Book";
 import API from "../utils/API";
 
 class SearchPage extends Component {
@@ -41,6 +41,7 @@ class SearchPage extends Component {
       "image": book.volumeInfo.imageLinks.thumbnail,
       "link": book.volumeInfo.canonicalVolumeLink
     }
+    console.log(`this is the request body`)
     console.log(requestBody);
 
     API.saveBook(requestBody)

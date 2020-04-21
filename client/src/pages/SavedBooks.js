@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import List from "../List";
-import Book from "../Book";
-import API from "../../utils/API";
+import List from "../components/List";
+import Book from "../components/Book";
+import API from "../utils/API";
 
 class SavedBooks extends Component {
 
     state = {
-        books: []
+        savedBooks: []
     }
 
-    componentDidMount() {
+    componentDidMount = () => {
         this.loadBooks();
     }
 
@@ -25,14 +25,14 @@ class SavedBooks extends Component {
         return(
             <div className="bookDisplay">
                 <List>
-                    {this.state.books.map(book => (
+                    {this.state.savedBooks.map(savedBooks => (
                         <Book
-                            key={book.id}
-                            title={book.volumeInfo.title}
-                            image={book.volumeInfo.imageLinks.thumbnail}
-                            author={book.volumeInfo.authors}
-                            synopsis={book.volumeInfo.description}
-                            purchaseLink={book.volumeInfo.canonicalVolumeLink} />
+                            key={savedBooks.id}
+                            title={savedBooks.volumeInfo.title}
+                            image={savedBooks.volumeInfo.imageLinks.thumbnail}
+                            author={savedBooks.volumeInfo.authors}
+                            synopsis={savedBooks.volumeInfo.description}
+                            purchaseLink={savedBooks.volumeInfo.canonicalVolumeLink} />
                     ))}
                 </List>
             </div>
