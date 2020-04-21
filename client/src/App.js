@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import MainNav from "./components/Navbar";
 import MainJumbotron from "./components/MainJumbotron";
-import SavedBooks from "./components/SavedBooks";
-import SearchPage from "./components/SearchPage";
+import SavedBooks from "./pages/SavedBooks";
+import SearchPage from "./pages/SearchPage";
 import "./App.css";
 
 class App extends Component {

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SearchBar from "../SearchBar";
 import List from "../List";
 import Book from "../Book";
-import API from "../../utils/API";
+import API from "../utils/API";
 
 class SearchPage extends Component {
 
