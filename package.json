@@ -1,5 +1,5 @@
 {
-  "name": "Google Books",
+  "name": "google-books",
   "version": "1.0.0",
   "description": "Search, save, read, remove, all from Google Books.",
   "main": "server.js",
