@@ -64,7 +64,7 @@ class SearchPage extends Component {
                         key={book.id}
                         title={book.volumeInfo.title}
                         icon="favorite"
-                        image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://cns.utexas.edu/components/com_easyblog/themes/wireframe/images/placeholder-image.png"}
+                        image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://centralca.static.anvilcms.net/media/images/2018/03/09/images/placeholder.max-640x480.png"}
                         author={book.volumeInfo.authors}
                         synopsis={book.volumeInfo.description}
                         purchaseLink={book.volumeInfo.canonicalVolumeLink}
