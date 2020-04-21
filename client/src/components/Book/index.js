@@ -3,6 +3,7 @@ import "./style.css";
 
 export function Book ({
     title,
+    icon,
     image,
     author,
     synopsis,
@@ -13,7 +14,7 @@ export function Book ({
         <div className="book">
             {/* Title */}
             <div className="title">{title}</div>        
-            <i className="material-icons" id={title} onClick={onClick}>favorite</i>
+            <i className="material-icons" id={title} onClick={onClick}>{icon}</i>
             {/* Thumbnail image */}
             <img className="image" src={image} alt={title + " image"}/>
             {/* Author */}

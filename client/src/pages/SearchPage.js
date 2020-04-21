@@ -63,6 +63,7 @@ class SearchPage extends Component {
                     <Book 
                         key={book.id}
                         title={book.volumeInfo.title}
+                        icon="favorite"
                         image={book.volumeInfo.imageLinks.thumbnail}
                         author={book.volumeInfo.authors}
                         synopsis={book.volumeInfo.description}
