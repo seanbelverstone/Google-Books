@@ -23,7 +23,7 @@ class SearchPage extends Component {
 
     // Using utils, makes the axios call
     API.getSearch(this.state.search).then(results => {
-
+      console.log(results.data.items[0].volumeInfo.imageLinks)
       // Sets the state of bookResults to the API results
       this.setState(
         {bookResults: results.data.items});
@@ -63,7 +63,8 @@ class SearchPage extends Component {
                     <Book 
                         key={book.id}
                         title={book.volumeInfo.title}
-                        image={book.volumeInfo.imageLinks.thumbnail}
+                        icon="favorite"
+                        image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://centralca.static.anvilcms.net/media/images/2018/03/09/images/placeholder.max-640x480.png"}
                         author={book.volumeInfo.authors}
                         synopsis={book.volumeInfo.description}
                         purchaseLink={book.volumeInfo.canonicalVolumeLink}
