@@ -15,8 +15,18 @@ const RemoveModal = (props) => {
   const deleteAuthor = props.deleteAuthor
   const bookDeleteId = props.bookDeleteId
 
+//   This function deletes a book from the database
   const removeBook = () => {
-	  console.log(bookDeleteId);
+
+	// Passes the unique ID through to the axios remove call in utils folder
+	API.removeBook(bookDeleteId)
+		  .then(res => {
+			  console.log(res.data)
+			//   Toggles the modal away, then refreshes the page
+			  toggle();
+			  window.location.reload();
+		  })
+		  .catch(err => console.log(err))
   }
 
   return (
