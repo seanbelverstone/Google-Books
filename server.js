@@ -4,6 +4,9 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const mongoUser = process.env.MONGO_USER;
+const mongoPassword = process.env.MONGO_PASSWORD
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -14,7 +17,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect("mongodb://localhost/google_books", { useNewUrlParser: true });
+mongoose.connect(`mongodb://${mongoUser}:${mongoPassword}@ds235658.mlab.com:35658/heroku_dprdz1ff`, { useNewUrlParser: true });
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
