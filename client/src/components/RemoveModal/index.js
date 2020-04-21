@@ -3,7 +3,6 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const RemoveModal = (props) => {
   const {
-    buttonLabel,
     className
   } = props;
 
@@ -11,16 +10,24 @@ const RemoveModal = (props) => {
 
   const toggle = () => setModal(!modal);
 
+  const deleteTitle = props.deleteTitle;
+  const deleteAuthor = props.deleteAuthor
+  const bookDeleteId = props.bookDeleteId
+
+  const removeBook = () => {
+	  console.log(bookDeleteId);
+  }
+
   return (
     <div>
-      <Button color="danger" onClick={toggle}>{buttonLabel}</Button>
+      <Button color="secondary" onClick={toggle}>X</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        <ModalHeader toggle={toggle}></ModalHeader>
         <ModalBody>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			Are you sure you'd like to remove {deleteTitle} by {deleteAuthor}?
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
+          <Button color="primary" onClick={removeBook}>Remove</Button>{' '}
           <Button color="secondary" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
