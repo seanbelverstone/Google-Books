@@ -5,9 +5,14 @@ import API from "../utils/API";
 
 class SavedBooks extends Component {
 
-    state = {
-        savedBooks: []
+    constructor(props) {
+        super(props);
+        this.state = {
+            savedBooks: []
+        }
+        this.removeBook = this.removeBook.bind(this);
     }
+
 
     componentDidMount = () => {
         this.loadBooks();
@@ -21,6 +26,10 @@ class SavedBooks extends Component {
             .catch(err => console.log(err));
     }
 
+    removeBook(event) {
+        console.log(`So, you'd like to remove the book ${event.target.id}?`);
+    }
+
     render() {
         return(
             <div className="bookDisplay">
@@ -32,7 +41,8 @@ class SavedBooks extends Component {
                             image={book.image}
                             author={book.authors}
                             synopsis={book.description}
-                            purchaseLink={book.link} />
+                            purchaseLink={book.link}
+                            onClick={this.removeBook} />
                     ))}
                 </List>
             </div>
