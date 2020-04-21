@@ -24,10 +24,10 @@ const RemoveModal = (props) => {
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}></ModalHeader>
         <ModalBody>
-			Are you sure you'd like to remove {deleteTitle} by {deleteAuthor}?
+			Are you sure you'd like to remove {deleteTitle} by {deleteAuthor} from your favorites?
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={removeBook}>Remove</Button>{' '}
+          <Button color="danger" onClick={removeBook}>Remove</Button>{' '}
           <Button color="secondary" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
