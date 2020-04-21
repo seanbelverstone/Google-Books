@@ -4,8 +4,13 @@
     padding: 20px !important;
 }
 
+.navbar-brand {
+    text-decoration: none !important;
+}
+
 a {
     color: black !important;
+    text-decoration: underline !important;
 }
 
 a:hover {
