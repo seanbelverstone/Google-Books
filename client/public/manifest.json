@@ -1,6 +1,6 @@
 {
   "short_name": "Google Books",
-  "name": "Create React App Sample",
+  "name": "Google Books",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
